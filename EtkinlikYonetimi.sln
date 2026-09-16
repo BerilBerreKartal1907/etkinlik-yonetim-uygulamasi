@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{66B673B6-86F5-4E8F-AA4A-DABFBC3C21CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtkinlikYonetimi.Entity", "src\EtkinlikYonetimi.Entity\EtkinlikYonetimi.Entity.csproj", "{297B8C8A-8623-4929-BCB2-0BA33E3BCEA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtkinlikYonetimi.DataAccess", "src\EtkinlikYonetimi.DataAccess\EtkinlikYonetimi.DataAccess.csproj", "{9297C68E-558B-482C-995F-AEAE4952E1E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtkinlikYonetimi.Business", "src\EtkinlikYonetimi.Business\EtkinlikYonetimi.Business.csproj", "{2CF1AF32-E4DA-4223-ABE1-CDE0C1266EA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtkinlikYonetimi.API", "src\EtkinlikYonetimi.API\EtkinlikYonetimi.API.csproj", "{BEECE194-7CB0-454B-8308-76238FE25F46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{297B8C8A-8623-4929-BCB2-0BA33E3BCEA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{297B8C8A-8623-4929-BCB2-0BA33E3BCEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{297B8C8A-8623-4929-BCB2-0BA33E3BCEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{297B8C8A-8623-4929-BCB2-0BA33E3BCEA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9297C68E-558B-482C-995F-AEAE4952E1E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9297C68E-558B-482C-995F-AEAE4952E1E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9297C68E-558B-482C-995F-AEAE4952E1E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9297C68E-558B-482C-995F-AEAE4952E1E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CF1AF32-E4DA-4223-ABE1-CDE0C1266EA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CF1AF32-E4DA-4223-ABE1-CDE0C1266EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CF1AF32-E4DA-4223-ABE1-CDE0C1266EA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CF1AF32-E4DA-4223-ABE1-CDE0C1266EA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEECE194-7CB0-454B-8308-76238FE25F46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEECE194-7CB0-454B-8308-76238FE25F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEECE194-7CB0-454B-8308-76238FE25F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEECE194-7CB0-454B-8308-76238FE25F46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{297B8C8A-8623-4929-BCB2-0BA33E3BCEA4} = {66B673B6-86F5-4E8F-AA4A-DABFBC3C21CE}
+		{9297C68E-558B-482C-995F-AEAE4952E1E8} = {66B673B6-86F5-4E8F-AA4A-DABFBC3C21CE}
+		{2CF1AF32-E4DA-4223-ABE1-CDE0C1266EA8} = {66B673B6-86F5-4E8F-AA4A-DABFBC3C21CE}
+		{BEECE194-7CB0-454B-8308-76238FE25F46} = {66B673B6-86F5-4E8F-AA4A-DABFBC3C21CE}
+	EndGlobalSection
+EndGlobal

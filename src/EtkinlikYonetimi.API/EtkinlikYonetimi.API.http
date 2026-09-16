@@ -1,0 +1,6 @@
+@EtkinlikYonetimi.API_HostAddress = http://localhost:5201
+
+GET {{EtkinlikYonetimi.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

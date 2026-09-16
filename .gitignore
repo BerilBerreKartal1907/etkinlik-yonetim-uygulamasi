@@ -1,0 +1,21 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+
+# Node / React
+node_modules/
+client/dist/
+
+# Yüklenen dosyalar (resimler kullanıcı tarafından yüklendiği için depoya gerek yok)
+src/EtkinlikYonetimi.API/wwwroot/uploads/
+
+# IDE
+.vs/
+.vscode/*
+!.vscode/extensions.json
+
+# İşletim sistemi
+.DS_Store
+Thumbs.db

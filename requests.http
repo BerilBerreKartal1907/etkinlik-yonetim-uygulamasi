@@ -1,0 +1,162 @@
+### Kayıt Ol - Başarılı senaryo
+POST http://localhost:5201/api/Auth/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "Test1234",
+  "passwordConfirm": "Test1234",
+  "firstName": "Beril",
+  "lastName": "Yılmaz",
+  "birthDate": "2000-05-15"
+}
+
+### Kayıt Ol - Parolalar eşleşmiyor
+POST http://localhost:5201/api/Auth/register
+Content-Type: application/json
+
+{
+  "email": "test2@example.com",
+  "password": "Test1234",
+  "passwordConfirm": "Farkli1234",
+  "firstName": "Ali",
+  "lastName": "Veli",
+  "birthDate": "1998-03-10"
+}
+
+### Kayıt Ol - Aynı email tekrar (ilk isteği çalıştırdıktan sonra dene)
+POST http://localhost:5201/api/Auth/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "Baska5678",
+  "passwordConfirm": "Baska5678",
+  "firstName": "Deneme",
+  "lastName": "Kullanici",
+  "birthDate": "1995-01-01"
+}
+
+### Giriş Yap - Başarılı senaryo
+POST http://localhost:5201/api/Auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "Test1234"
+}
+
+### Giriş Yap - Kullanıcı bulunamadı
+POST http://localhost:5201/api/Auth/login
+Content-Type: application/json
+
+{
+  "email": "olmayan@example.com",
+  "password": "Test1234"
+}
+
+### Giriş Yap - Parola hatalı
+POST http://localhost:5201/api/Auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "YanlisParola1"
+}
+
+### Etkinlik Ekle - Başarılı senaryo (test@example.com kullanıcısı Id=1 olmalı)
+POST http://localhost:5201/api/Event
+Content-Type: application/json
+
+{
+  "title": "Yazılım Zirvesi 2026",
+  "shortDescription": "Yazılım dünyasından uzmanların buluştuğu etkinlik.",
+  "longDescriptionHtml": "<p>Bu etkinlikte <b>yazılım</b> trendleri konuşulacak.</p>",
+  "imageUrl": null,
+  "startDate": "2026-09-15T10:00:00",
+  "endDate": "2026-09-15T18:00:00",
+  "isActive": true,
+  "createdByUserId": 1
+}
+
+### Etkinlik Ekle - Mükerrer başlık (yukarıdakiyle aynı başlık)
+POST http://localhost:5201/api/Event
+Content-Type: application/json
+
+{
+  "title": "Yazılım Zirvesi 2026",
+  "shortDescription": "Farklı açıklama.",
+  "longDescriptionHtml": "<p>Farklı içerik.</p>",
+  "imageUrl": null,
+  "startDate": "2026-10-01T10:00:00",
+  "endDate": "2026-10-01T18:00:00",
+  "isActive": true,
+  "createdByUserId": 1
+}
+
+### Etkinlik Listesi (herkese açık - sadece aktif + ileri tarihli)
+GET http://localhost:5201/api/Event
+
+### Etkinlik Detay (ilk eklenen etkinliğin Id'si muhtemelen 1)
+GET http://localhost:5201/api/Event/1
+
+### Etkinlik Yönetimi Listesi (admin - tüm etkinlikler)
+GET http://localhost:5201/api/Event/management
+
+### Etkinlik Güncelle (Id belirterek düzenleme moduna geçiyoruz)
+POST http://localhost:5201/api/Event
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Yazılım Zirvesi 2026 - Güncellendi",
+  "shortDescription": "Güncellenmiş açıklama.",
+  "longDescriptionHtml": "<p>Güncellenmiş <b>içerik</b>.</p>",
+  "imageUrl": null,
+  "startDate": "2026-09-15T10:00:00",
+  "endDate": "2026-09-15T18:00:00",
+  "isActive": true,
+  "createdByUserId": 1
+}
+
+### Etkinlik Sil
+DELETE http://localhost:5201/api/Event/1
+
+### Profil Güncelle - Başarılı senaryo (parola değiştirmeden)
+PUT http://localhost:5201/api/Auth/profile
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "email": "test@example.com",
+  "newPassword": null,
+  "firstName": "Beril",
+  "lastName": "Güncellenmiş",
+  "birthDate": "2000-05-15"
+}
+
+### Profil Güncelle - Parola da değiştiriliyor
+PUT http://localhost:5201/api/Auth/profile
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "email": "test@example.com",
+  "newPassword": "YeniParola123",
+  "firstName": "Beril",
+  "lastName": "Yılmaz",
+  "birthDate": "2000-05-15"
+}
+
+### Profil Güncelle - Geçersiz email formatı
+PUT http://localhost:5201/api/Auth/profile
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "email": "gecersiz-email",
+  "newPassword": null,
+  "firstName": "Beril",
+  "lastName": "Yılmaz",
+  "birthDate": "2000-05-15"
+}
